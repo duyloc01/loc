@@ -1,0 +1,104 @@
+﻿@model IEnumerable<tuanntgcs18661ApplicationDev.Models.Classroom>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<h1>Classrooms</h1>
+<p>
+    @if (User.IsInRole(nameof(Role.Staff)))
+    {
+        <a asp-action="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Part)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassProfile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Part)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClassProfile.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Code)
+                </td>
+                <td>
+                    @if (User.IsInRole(nameof(Role.Staff)))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    }
+                    @if (User.IsInRole(nameof(Role.Trainee)))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    }
+                    @if (User.IsInRole(nameof(Role.Trainer)))
+                    {
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>

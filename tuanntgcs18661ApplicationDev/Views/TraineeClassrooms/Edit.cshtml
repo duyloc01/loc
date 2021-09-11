@@ -1,0 +1,56 @@
+﻿@model tuanntgcs18661ApplicationDev.Models.TraineeClassroom
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<h1>Edit</h1>
+
+<h4>TraineeClassroom</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClassroomId" class="control-label"></label>
+                <select asp-for="ClassroomId" class="form-control" asp-items="ViewBag.ClassroomId"></select>
+                <span asp-validation-for="ClassroomId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TraineeId" class="control-label"></label>
+                <select asp-for="TraineeId" class="form-control" asp-items="ViewBag.TraineeId"></select>
+                <span asp-validation-for="TraineeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
+<br &numsp;>
